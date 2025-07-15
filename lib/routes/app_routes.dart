@@ -1,12 +1,18 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-class AppRoutes {
-  static Route<dynamic> routes(RouteSettings settings) {
-    late final Widget screenWidget;
+import '../features/auth/screens/login_screen.dart';
 
-
-    return MaterialPageRoute(builder: (context) => screenWidget);
-  }
-}
+final GoRouter router = GoRouter(
+  initialLocation: '/',
+  routes: [
+    GoRoute(
+      path: LoginScreen.routeName,
+      name: 'login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+  ],
+);
