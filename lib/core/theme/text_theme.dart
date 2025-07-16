@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 TextTheme get textTheme {
   return TextTheme(
     titleLarge: TextStyle(
-      color: Colors.black,
-      fontSize: 40,
-      fontWeight: FontWeight.bold,
+      fontSize: 28.sp,
+      fontWeight: FontWeight.w500
     ),
     titleMedium: TextStyle(
-      fontSize: 24,
-      fontWeight: FontWeight.w600,
-      letterSpacing: .4,
+      fontSize: 12.sp,
+      fontWeight: FontWeight.w400,
+      letterSpacing: 4
     ),
     titleSmall: TextStyle(
       fontSize: 22,
