@@ -14,14 +14,9 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(
-      designSize: const Size(393, 852),
-      minTextAdapt: true,
-      splitScreenMode: true,
-      child: MaterialApp.router(
-        routerConfig: router,
-        theme: ThemeData(textTheme: textTheme),
-      ),
+    return MaterialApp.router(
+      routerConfig: router,
+      theme: ThemeData(textTheme: textTheme),
     );
   }
 }
