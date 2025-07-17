@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:market_jango/core/theme/light_dark_theme.dart';
 import 'package:market_jango/routes/app_routes.dart';
-import 'core/theme/text_theme.dart';
 
 
 
