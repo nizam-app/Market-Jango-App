@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:market_jango/core/constants/color_control/all_color.dart';
 import 'package:market_jango/core/widget/custom_auth_button.dart';
 import 'package:market_jango/core/widget/sreeen_brackground.dart';
+
+import 'forgot_password_screen.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
-  static const String routeName = '/';
+  static const String routeName = '/loginScreen';
 
   @override
   Widget build(BuildContext context) {
@@ -13,16 +16,18 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
 
       body: ScreenBackground(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              LoginHereText(),
-              LoginTextFormField(),
-              LoginBotton()
-
-
-            ],
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20.w),
+            child: Column(
+              children: [
+                LoginHereText(),
+                LoginTextFormField(),
+                LoginBotton()
+          
+          
+              ],
+            ),
           ),
         ),
       ),
@@ -41,7 +46,11 @@ class LoginBotton extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: 30.h,),
-        Text("Forgot your Password?",style: Theme.of(context).textTheme.titleSmall,),
+        InkWell(
+          onTap: () {
+            goToForgotPasswordScreen(context);
+          },
+            child: Text("Forgot your Password?",style: Theme.of(context).textTheme.titleSmall,)),
         SizedBox(height: 30.h,),
        CustomAuthButton(buttonText:"Login",onTap: (){
          loginDone();
@@ -56,8 +65,10 @@ class LoginBotton extends StatelessWidget {
                 text: "Sign up",
                 style: Theme.of(context).textTheme.titleSmall?.copyWith(
                   color: AllColor.loginButtonColor,
-                  fontWeight: FontWeight.w300
-                ),
+                  fontWeight: FontWeight.w300,),
+                onEnter: (_){
+                  goToSignUpScreen(context);
+                }
               ),
             ],
           ),
@@ -66,9 +77,15 @@ class LoginBotton extends StatelessWidget {
       ],
     );
   }
-void loginDone() {
+void loginDone() {}
 
+void goToForgotPasswordScreen(BuildContext context) {
+  context.push(ForgotPasswordScreen.routeName);}
+
+  void goToSignUpScreen(BuildContext context) {
+    context.push('');
   }
+
 }
 
 

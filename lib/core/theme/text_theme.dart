@@ -10,6 +10,7 @@ TextTheme get textTheme {
     ),
     titleMedium: TextStyle(
       fontSize: 12.sp,
+      color: AllColor.green300,
       fontWeight: FontWeight.w400,
       letterSpacing: 1
     ),
